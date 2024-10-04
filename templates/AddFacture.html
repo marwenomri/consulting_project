@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if facture %}
+<h1> hello </h1>
+{% else %}
+<h1>ajout facture</h1>
+<br />
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group row">
+        <div class="form-group col-md-6">
+            {{form.date.label(class='form-label')}}
+            {{form.date(class='form-control')}}
+        </div>
+        <div class="form-group col-md-6">
+            {{form.num_facture.label(class='form-label')}}
+            {{form.num_facture(class='form-control')}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="form-group col-md-6">
+            {{form.type.label(class='form-label')}}
+            {{form.type(class='form-control')}}
+        </div>
+        <div class="form-group col-md-6">
+            {{form.achats.label(class='form-label')}}
+            {{form.achats(class='form-control')}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="form-group col-md-6">
+            {{form.taux_TVA.label(class='form-label')}}
+            {{form.taux_TVA(class='form-control')}}
+        </div>
+        <div class="form-group col-md-6">
+            {{form.DT.label(class='form-label')}}
+            {{form.DT(class='form-control')}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="form-group col-md-6">
+            {{form.mode_reglement.label(class='form-label')}}
+            {{form.mode_reglement(class='form-control')}}
+        </div>
+        <div class="form-group col-md-6">
+            {{form.JRL.label(class='form-label')}}
+            {{form.JRL(class='form-control')}}
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="form-group col-md-6">
+            {{form.cheque_num.label(class='form-label')}}
+            {{form.cheque_num(class='form-control')}}
+        </div>
+        <div class="form-group col-md-6">
+            {{form.RS.label(class='form-label')}}
+            {{form.RS(class='form-control')}}
+        </div>
+    </div>
+
+    {{form.submit(class="btn btn-primary")}}
+
+</form>
+
+
+{% endif %}
+
+
+{% endblock %}
